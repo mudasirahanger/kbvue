@@ -1,4 +1,5 @@
 import HomePage from './pages/home.vue';
+import Categories from './pages/categories.vue';
 import AboutPage from './pages/about.vue';
 import FormPage from './pages/form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
@@ -23,6 +24,10 @@ export default [
   {
     path: '/about/',
     component: AboutPage,
+  },
+  {
+    path: '/categories/',
+    component: Categories,
   },
   {
     path: '/form/',
