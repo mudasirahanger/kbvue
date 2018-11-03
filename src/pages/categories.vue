@@ -25,11 +25,13 @@
 </template>
 
 <script>
+
 export default {	
         
     data(){
         return{
           products: [{
+            "id":"1",
           "name":"Koshur Dried Apricot (Khurmani) 5 kg",
           "thumb" : "https://www.kashmirbox.com/image/cache/catalog/Kb_Images/healthy_living/exotic_foods/dryfruits/almond-kernels-(4)-270x270.jpg",
           "thumb_hover":"https://www.kashmirbox.com/image/cache/catalog/Kb_Images/healthy_living/exotic_foods/dryfruits/KB1991(6)-500x500.jpg",

@@ -17,6 +17,12 @@ import AppStyles from './css/app.css';
 // Import App Component
 import App from './app.vue';
 
+import axios from 'axios/dist/axios.min.js';
+import vue from 'vue/dist/vue.min.js';
+import vueresource from 'vue-resource/dist/vue-resource.min.js';
+
+
+
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
 
