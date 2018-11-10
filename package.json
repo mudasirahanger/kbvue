@@ -39,6 +39,7 @@
     "framework7-vue": "^3.4.0",
     "material-design-icons": "^3.0.1",
     "vue": "^2.5.17",
+    "vue-localstorage": "^0.6.2",
     "vue-resource": "^1.5.1"
   },
   "devDependencies": {

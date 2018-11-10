@@ -1,12 +1,11 @@
-import HomePage from './pages/home.vue';
-import Categories from './pages/categories.vue';
-import DryFruits from './pages/DryFruits.vue';
-import AboutPage from './pages/about.vue';
-import FormPage from './pages/form.vue';
+import HomePage   from './pages/home.vue';
+import Category from './pages/category.vue';
+import AboutPage  from './pages/about.vue';
+import FormPage   from './pages/form.vue';
+import Product    from  './pages/product.vue';
+import Login      from './pages/login.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
-
-
 import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
 
@@ -28,13 +27,16 @@ export default [
     component: AboutPage,
   },
   {
-    path: '/categories/',
-    component: Categories,
+    path: '/category/:pathId',
+    component: Category,
   },
   {
-    path: '/dryFruits/:id',
-    
-    component: DryFruits,
+    path:'/product/:pathId',
+    component:Product,
+  },
+  {
+    path: '/login/',
+    component:Login,
   },
   {
     path: '/form/',
