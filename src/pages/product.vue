@@ -11,10 +11,26 @@
           v-bind:after="product.price"
           v-bind:text="product.description"
           >
-            <img slot="media"  v-bind:src=" product.thumb " width="80" />
+            <img slot="media"  v-bind:src="product.thumb" width="80" />
           </f7-list-item>
  
     </f7-list>
+
+
+
+    <div class="card demo-card-header-pic">
+  <div style="background-image:url(...)" valign="bottom" class="card-header color-white no-border">Journey To Mountains</div>
+  <div class="card-content">
+    <div class="card-content-inner">
+      <p class="color-gray">Posted on January 21, 2015</p>
+      <p>Quisque eget vestibulum nulla...</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Read more</a>
+  </div>
+</div>
 
    <!-- <f7-button big @click="getPostsViaREST" color="green">Load more..</f7-button> -->
 
@@ -32,14 +48,8 @@ export default {
       products: {}
     }
   },
-  methods: {
-    getPostsViaREST (event) {
-      axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&productid=this.product_id').then(response => {this.products = response.data})
-    },
-
-  },
-  created(){
-          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
+   created(){
+          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
           
         },
         
