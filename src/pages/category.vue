@@ -6,8 +6,8 @@
     <f7-block>
 
   <f7-row >
-    <f7-col  class="lazy" v-for="product in products" :key="product.product_id" >
-      <f7-list media-list class="lazy">
+    <f7-col  class="lazy" >
+      <f7-list media-list class="lazy" v-for="product in products" :key="product.product_id" >
     <f7-card>
               <f7-card-content>
             <f7-list-item >
