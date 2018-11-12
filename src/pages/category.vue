@@ -5,25 +5,29 @@
     <f7-block-title>This is category id : {{$f7route.params.pathId}} </f7-block-title>
     <f7-block>
 
-  <f7-row >
-    <f7-col  class="lazy" >
-      <f7-list media-list class="lazy" v-for="product in products" :key="product.product_id" >
-    <f7-card>
-              <f7-card-content>
+  <f7-row v-for="product in products.slice(0,10)" :key="product.product_id"  >
+    <f7-col  class="lazy" v-for="product in products.slice(0,2)" :key="product.product_id" >
+      <f7-list media-list class="lazy" >
+    
+           
             <f7-list-item >
              <img class="imgsize" slot="media"  v-bind:src=" product.thumb " width="150"/>
+
      </f7-list-item>
-       <f7-list-item
+       <f7-list-item 
+
+
             v-bind:link="'/product/'+product.product_id"
               v-bind:title="product.name"
             v-bind:after="product.price"
              v-bind:subtitle="product.kbcode"
               v-bind:text="product.description">
+           
           </f7-list-item> 
             
-        </f7-card-content>
-             <f7-card-footer> ShopNow </f7-card-footer>
- </f7-card>
+     
+            
+ 
     </f7-list>
      </f7-col>
      <f7-col>
@@ -46,7 +50,7 @@ export default {
     return {
       id:this.$f7route.params.pathId,
       products: {},
-      limit:2
+      x:10
     }
   },
   methods: {
