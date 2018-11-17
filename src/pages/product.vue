@@ -4,7 +4,7 @@
     <f7-block>product page  </f7-block>
     <f7-block-title>This is product id : {{$f7route.params.pathId}}  </f7-block-title>
 
-      <f7-list media-list v-for="product in products.slice(0,2)" :key="product.product_id">
+      <f7-list media-list v-for="product in products" :key="product.product_id">
           <f7-list-item
           v-bind:link="'/product/'+product.product_id"
           v-bind:title="product.name"

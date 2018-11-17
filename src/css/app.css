@@ -29,8 +29,13 @@
 }
 .imgsize
 {
-  
+  width: 50%;
 
+}
+.footer{
+  position: absolute;
+   top:auto;
+   bottom:0;
 }
 .demo-card-header-pic .card-header {
   height: 40vw;
