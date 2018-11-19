@@ -11,7 +11,7 @@
         <f7-nav-right>
           </f7-nav-right>
           <f7-nav-left>
-        <f7-link material="favorite_border" ></f7-link>
+        <f7-link icon-if-md="material:favorite_border" ></f7-link>
       </f7-nav-left>
         <f7-icon material="search"></f7-icon>
        
