@@ -10,7 +10,6 @@
     </ul>
   </p>
 
-
 <f7-list>
   <f7-list-item>
     <label for="name">Name</label>

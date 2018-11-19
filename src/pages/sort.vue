@@ -1,5 +1,6 @@
 <template>
-  <f7-page>
+  <f7-page on:Load="openIndicator" >
+
 
    <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->
     <f7-block strong><h1> SORT BY</h1></f7-block>
@@ -22,6 +23,17 @@ data(){
     product:[]
 
   }
+},
+methods:{
+  openIndicator() {
+        const self = this;
+        self.$f7.preloader.show();
+        setTimeout(() => {
+          self.$f7.preloader.hide();
+        }, 1000);
+    
+  },
+  
 }
 
 
