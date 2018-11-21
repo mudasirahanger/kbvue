@@ -5,6 +5,7 @@ import FormPage   from './pages/form.vue';
 import Product    from  './pages/product.vue';
 import Login      from './pages/login.vue';
 import Sort      from './pages/sort.vue';
+import Filter      from './pages/filter.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
 import PanelLeftPage from './pages/panel-left.vue';
@@ -31,6 +32,11 @@ export default [
     path: '/sort/',
     component: Sort,
   },
+  {
+    path: '/filter/',
+    component: Filter,
+  },
+
 
   {
     path: '/category/:pathId',

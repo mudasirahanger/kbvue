@@ -23,7 +23,7 @@
                   <f7-label > 
               <h1 link="'/product/'+product.product_id" ></h1>
               <h3>
-                ₹{{product.price}}
+                ₹{{product.price}}  
                 <h3 >
                   {{product.kbcode}}
                 </h3>
@@ -44,26 +44,6 @@
   </f7-button> </f7-col>
           <f7-col></f7-col>
       </f7-row>
-          
-<!--      
-    <f7-row  class="lazy lazy-fade-in" v-for="(product,index) in products" :key="index" >  
-      
-    <f7-col  v-for="i in 2" > 
-      <f7-list media-list class="lazy  lazy-fadeIn" >
-        <f7-list-item >
-           <img class="imgsize" slot="media"  v-bind:src=" product.thumb " width="120"/>
-        </f7-list-item>   
-          <f7-list-item 
-            v-bind:link="'/product/'+product.product_id"
-            v-bind:title="product.name"
-            v-bind:after="product.price"
-            v-bind:subtitle="product.kbcode"
-          >            
-          </f7-list-item> 
-     </f7-list>
-    </f7-col>-->
-    
-   <!-- {{showProduct(index)}}-->
     </f7-row>
   </f7-block>
   <div class="toolbar" style="background-color:black">
@@ -73,28 +53,10 @@
       </f7-nav-left>
       <h1>|</h1>
         <f7-nav-right>
-        <f7-link icon-if-ios="f7:filter-fill" icon-if-md="material:filter_list"> Filter</f7-link> 
+        <f7-link icon-if-ios="f7:filter-fill" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-nav-right>
             </div>
           </div>     
-<!-- <f7-button big @click="getPostsViaREST" color="green">Load more..</f7-button> 
-   <f7-button big color="green">Load more..</f7-button>  
-<f7-row>
-    <f7-navbar toolbar-fixed>
-      <f7-row>
-        <f7-col>
-      <f7-nav-left>
-        <f7-link icon-if-ios="f7:sort" v-on:click=" openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
-      </f7-nav-left>
-    </f7-col >
-       <f7-col> 
-      <f7-nav-right>
-        <f7-link icon-if-ios="f7:filter-fill" icon-if-md="material:filter_list"> Filter</f7-link> 
-      </f7-nav-right>
-    </f7-col>
-    </f7-row>
-  </f7-navbar>
-</f7-row>-->
   </f7-page>
 </template>
 
@@ -105,7 +67,7 @@ export default {
     return {
       id:this.$f7route.params.pathId,
       products: {},
-       limitationList:5,
+       limitationList:3,
         loading: true 
     }
   },

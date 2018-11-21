@@ -5,6 +5,8 @@
     <f7-block-title>This is product id : {{$f7route.params.pathId}}  </f7-block-title>
 
       <f7-list media-list v-for="product in products" :key="product.product_id">
+
+
           <f7-list-item
           v-bind:link="'/product/'+product.product_id"
           v-bind:title="product.name"
@@ -38,7 +40,6 @@
    
   </f7-page>
 </template>
-
 <script>
 import axios from 'axios';
 export default {
@@ -50,6 +51,7 @@ export default {
   },
    created(){
           axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
+           
           
         },
         

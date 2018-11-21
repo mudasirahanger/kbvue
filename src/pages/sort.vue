@@ -13,7 +13,19 @@
     </f7-block>
     <f7-block>
        <f7-link icon-if-ios="f7:filter-fill" icon-if-md="material:attach_money"   > Price:Low to High</f7-link>
-    </f7-block>  
+    </f7-block> 
+     <div class="toolbar" style="background-color:black">
+            <div class="toolbar-inner">
+               <f7-nav-left>
+        <f7-link icon-if-ios="f7:sort" v-on:click=" openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
+      </f7-nav-left>
+      <h1>|</h1>
+        <f7-nav-right>
+        <f7-link icon-if-ios="f7:filter-fill" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
+      </f7-nav-right>
+            </div>
+          </div>    
+    
   </f7-page>
 </template>
 <script>

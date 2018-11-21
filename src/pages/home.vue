@@ -11,9 +11,11 @@
         <f7-nav-right>
           </f7-nav-right>
           <f7-nav-left>
-        <f7-link icon-if-md="material:favorite_border" ></f7-link>
+        <f7-link icon-if-md="material:favorite" ></f7-link>
+         <f7-link icon-if-ios="f7:shopping_cart" icon-if-md="material:shopping_cart" ></f7-link>
+          <f7-link icon-if-md="material:search" ></f7-link>
       </f7-nav-left>
-        <f7-icon material="search"></f7-icon>
+        
        
       </f7-nav-right>
     </f7-navbar>
