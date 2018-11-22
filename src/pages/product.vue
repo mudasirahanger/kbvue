@@ -1,43 +1,43 @@
 <template>
-  <f7-page >
-    <f7-navbar v-bind:title=" $f7route.hash " back-link="Back" color="black"></f7-navbar>
-    <f7-block>product page  </f7-block>
-    <f7-block-title>This is product id : {{$f7route.params.pathId}}  </f7-block-title>
+  <f7-page>
+    <f7-navbar color="black">
+      <f7-nav-left>
+        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+      </f7-nav-left>
+      <f7-nav-title>KB</f7-nav-title>
+      <f7-nav-right>
+        <f7-link icon-if-ios="f7:search" icon-if-md="material:search" ></f7-link>
+        <f7-link icon-if-ios="f7:favorite" icon-if-md="material:favorite" ></f7-link>
+        <f7-link icon-if-ios="f7:shopping_cart" icon-if-md="material:shopping_cart" panel-open="right"></f7-link>
+      </f7-nav-right> 
+    </f7-navbar>
+    
+    <f7-row  v-if="products.length">
+      <f7-col>
+            <f7-swiper pagination >
+              <f7-swiper-slide>
+                <img  v-bind:src=" products[0].thumb " />
+              </f7-swiper-slide>
+              <f7-swiper-slide><img  v-bind:src=" products[0].thumb " /></f7-swiper-slide>
+              <f7-swiper-slide><img  v-bind:src=" products[0].thumb " /></f7-swiper-slide>
+            </f7-swiper>
+      </f7-col>
+    </f7-row>
 
-      <f7-list media-list v-for="product in products" :key="product.product_id">
 
+    <f7-row  v-if=" products.length ">
+      <f7-col>
+            <h3>{{  products[0].name }}   </h3>
+      
+            <p>{{  products[0].description }}   </p>
 
-          <f7-list-item
-          v-bind:link="'/product/'+product.product_id"
-          v-bind:title="product.name"
-          v-bind:after="product.price"
-          v-bind:text="product.description"
-          >
-            <img slot="media"  v-bind:src="product.thumb" width="80" />
-          </f7-list-item>
- 
-    </f7-list>
+            <span> {{ products[0].price }}</span>
 
-
-
-    <div class="card demo-card-header-pic">
-  <div style="background-image:url(...)" valign="bottom" class="card-header color-white no-border">Journey To Mountains</div>
-  <div class="card-content">
-    <div class="card-content-inner">
-      <p class="color-gray">Posted on January 21, 2015</p>
-      <p>Quisque eget vestibulum nulla...</p>
-    </div>
-  </div>
-  <div class="card-footer">
-    <a href="#" class="link">Like</a>
-    <a href="#" class="link">Read more</a>
-  </div>
-</div>
-
-   <!-- <f7-button big @click="getPostsViaREST" color="green">Load more..</f7-button> -->
-
-   <f7-button big color="green">Load more..</f7-button>
+            
+      </f7-col>
+    </f7-row>
    
+   <div class="tax">Additional tax may apply; charged at checkout</div>
   </f7-page>
 </template>
 <script>
@@ -45,15 +45,14 @@ import axios from 'axios';
 export default {
    data: function () {
     return {
-      id:this.$f7route.params.pathId,
+      id:this.$f7route.params.productId,
       products: {}
     }
   },
-   created(){
+  created(){
           axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
-           
-          
+          // window.addEventListener('scroll', this.handleScroll); // helps to handle scroll //
         },
-        
+  
 }
 </script>
