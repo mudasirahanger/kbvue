@@ -17,8 +17,8 @@
         <div class="col-50"  v-for="(product,index) in products"  :key="product.product_id"  v-if="products && products.length >0 && index <= limitationList">
           <f7-card>
             <f7-card-header> <f7-label ><h4>{{product.name}}</h4></f7-label></f7-card-header>
-            <f7-card-content> 
-              <f7-link  v-bind:link="'/product/'+product.product_id"></f7-link>
+            <f7-card-content <f7-link  v-bind:link="'/product/'+product.product_id"></f7-link>
+              
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
             </f7-card-content>
           <f7-card-footer>

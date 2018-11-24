@@ -5,7 +5,6 @@
       <p>Shop By</p>
     </f7-block>
         <f7-list>
-
       <!--<f7-list-item link="/categories/" title="Categories" view="#main-view" panel-close></f7-list-item>-->
       <f7-list-item accordion-item title="MEN">
 	    <f7-accordion-content>

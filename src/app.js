@@ -14,6 +14,7 @@ import Framework7Styles from 'framework7/css/framework7.css';
 import IconsStyles from './css/icons.css';
 import AppStyles from './css/app.css';
 
+
 // Import App Component
 import App from './app.vue';
 //import vueSmoothScroll from 'vue-smooth-scroll';
