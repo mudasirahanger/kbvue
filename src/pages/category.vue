@@ -56,7 +56,7 @@
       </f7-nav-left>
       <h1>|</h1>
         <f7-nav-right>
-        <f7-link icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings"  href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
+        <f7-link icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-nav-right>
             </div>
           </div>     

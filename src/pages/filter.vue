@@ -2,7 +2,7 @@
         <f7-page on:Load="openIndicator" >
          <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->   
             
-            <f7-navbar back-link="Back" > Back</f7-navbar>            
+              <f7-navbar back-link="Back" >Back</f7-navbar>         
            <!--<f7-block>
             <f7-searchbar placeholder="search"></f7-searchbar>
           </f7-block>-->

@@ -10,7 +10,7 @@
       <f7-list-item accordion-item title="MEN">
 	    <f7-accordion-content>
 	      <f7-list>
-	      	 <f7-list-item link="/category/1391#Men Clothings" v-on:click=" openIndicator()" title="Men" view="#main-view" panel-close></f7-list-item>
+	      	 <f7-list-item link="/category/1391#Men Clothings" v-on:click=" openIndicator()" title="see flow form here" view="#main-view" panel-close></f7-list-item>
 	        <f7-list-item accordion-item link="" title="kurta pajama">
 	        <f7-accordion-content> 
 	         <f7-list> 
