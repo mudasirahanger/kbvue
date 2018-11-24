@@ -22,13 +22,10 @@
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
             </f7-card-content>
           <f7-card-footer>
-            
-              
               <f7-row>
                 <f7-col>
                   <f7-label > 
-            
-              <h3>
+                <h3>
                 ₹{{product.price}}  
                 <h3 >
                   {{product.kbcode}}
@@ -47,11 +44,11 @@
         <f7-col></f7-col>
          <f7-col><f7-button class="col button button-fill color-green "   @click="updateLimitation(limitationList)">
     show {{limitationList == 3 ? 'More' : 'Less'}}
-  </f7-button> </f7-col>
+      </f7-button> </f7-col>
           <f7-col></f7-col>
       </f7-row>
     </f7-row>
-  </f7-block>
+</f7-block>
   <div class="toolbar" style="background-color:black">
             <div class="toolbar-inner">
                <f7-nav-left>
@@ -59,7 +56,7 @@
       </f7-nav-left>
       <h1>|</h1>
         <f7-nav-right>
-        <f7-link icon-if-ios="f7:filter-fill" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
+        <f7-link icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings"  href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-nav-right>
             </div>
           </div>     

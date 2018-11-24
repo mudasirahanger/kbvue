@@ -2,9 +2,7 @@
         <f7-page on:Load="openIndicator" >
          <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->   
             
-            <f7-navbar back-link="Back" > Back</f7-navbar> 
-            <f7-block strong><h1 style="text-align:Center"> Filter By</h1></f7-block>
-           
+            <f7-navbar back-link="Back" > Back</f7-navbar>            
            <!--<f7-block>
             <f7-searchbar placeholder="search"></f7-searchbar>
           </f7-block>-->
@@ -103,41 +101,60 @@
                 </f7-col>
               </f7-row>
             </f7-col>
-            <f7-col>
-              <f7-block>
-                  
-                      <f7-card>
-                        <f7-card-header> <f7-label ><f7-block-title><h1>Filter by</h1> </f7-block-title></f7-label>  </f7-card-header>
-                   <f7-card-content> 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.
-                   </f7-card-content>
-                    
-                   <f7-card-footer>
-                    <f7-link icon-if-ios="f7:filter-fill"  back-link="Back" icon-if-md="material:cancel"> cancel</f7-link>
-                    
-                   </f7-card-footer>
-                   
-                 </f7-card>
+            <f7-col>             
+      <f7-block>
+        <div class="row" >
+          <div class="col-50"  v-for="(product,index) in products.slice(4,6)"  :key="product.product_id">
+            <f7-card>
+              <f7-card-header> <f7-label ><h4>{{product.name}}</h4></f7-label></f7-card-header>
+              <f7-card-content> 
+                <f7-link  v-bind:link="'/product/'+product.product_id"></f7-link>
+                <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
+              </f7-card-content>
+            <f7-card-footer>
+                <f7-row>
+                  <f7-col>
+                    <f7-label > 
+                  <h3>
+                  ₹{{product.price}}  
+                  <h3 >
+                    {{product.kbcode}}
+                  </h3>
+                </h3>
+                </f7-label>
+                  </f7-col>                
+                </f7-row>
+
+              <f7-label class="responsive" >    
+              </f7-label>
+            </f7-card-footer>  
+            </f7-card>
+          </div>
+        </div>       
               </f7-block>
             </f7-col>
-            </f7-col>
-          </f7-row>
-          <f7-row>
-            <f7-col>
-            <f7-col>
-              </f7-col>
             </f7-col>
           </f7-row>
         </f7-page>
 </template>
 <script>
+import axios from 'axios';
  export default {
       data(){
         return{
-          product:[]
+          id:this.$f7route.params.pathId,
+      products: {},
         }
       },
-      methods:{
+     
+        methods: {
+       updateLimitation(limitationList){
+  if (this.limitationList == this.products.length) {
+    this.limitationList = 3
+  }else{
+    this.limitationList = this.products.length
+  }
+},
         openIndicator() {
               const self = this;
               self.$f7.preloader.show();
@@ -145,6 +162,12 @@
                 self.$f7.preloader.hide();
               }, 1000);
         },
-  }
+  },
+  created(){
+          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
+          window.scrollTo(0, document.body.scrollHeight ||
+           document.documentElement.scrollHeight);
+        }  
  }
+
 </script>
