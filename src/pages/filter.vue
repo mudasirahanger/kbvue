@@ -1,9 +1,7 @@
       <template>
         <f7-page on:Load="openIndicator" >
-          <f7-navbar back-link="Back" >Back</f7-navbar>
-         <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->   
-            
-                       
+          <f7-navbar back-link="Back">Back</f7-navbar>
+         <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->          
            <!--<f7-block>
             <f7-searchbar placeholder="search"></f7-searchbar>
           </f7-block>-->
@@ -105,7 +103,7 @@
             <f7-col>             
       <f7-block>
         <div class="row" >
-          <div class="col-100"  v-for="(product,index) in products.slice(4,6)"  :key="product.product_id">
+          <div class="col-100"  v-for="(product,index) in products"  :key="product.product_id">
             <f7-card>
               <f7-card-header> <f7-label ><h4>{{product.name}}</h4></f7-label></f7-card-header>
               <f7-card-content> 
@@ -145,6 +143,7 @@ import axios from 'axios';
         return{
           id:this.$f7route.params.pathId,
       products: {},
+       animateNavBackIcon:true
         }
       },
      
@@ -165,7 +164,7 @@ import axios from 'axios';
         },
   },
   created(){
-          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
+          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+1391).then(response => {this.products = response.data})
           window.scrollTo(0, document.body.scrollHeight ||
            document.documentElement.scrollHeight);
         }  

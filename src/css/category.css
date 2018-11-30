@@ -31,3 +31,9 @@
 .demo-facebook-card .card-content-padding .likes {
   color: #8e8e93;
 }
+.btn
+{
+  border-radius: 100%; 
+   height:60px; 
+   background:black
+}

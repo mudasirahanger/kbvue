@@ -12,10 +12,7 @@
         <f7-label>E-mail</f7-label>
         <f7-input type="email" placeholder="E-mail"></f7-input>
       </f7-list-item>
-      <f7-list-item>
-        <f7-label>URL</f7-label>
-        <f7-input type="url" placeholder="URL"></f7-input>
-      </f7-list-item>
+      
       <f7-list-item>
         <f7-label>Password</f7-label>
         <f7-input type="password" placeholder="Password"></f7-input>
@@ -38,7 +35,7 @@
     </f7-list></f7-card-content>
   <f7-card-footer>Card footer content</f7-card-footer>
 </f7-card>
-    <f7-navbar title="Form" back-link="Back">hi</f7-navbar>
+    <f7-navbar title="Form" back-link="Back"></f7-navbar>
    
   </f7-page>
 </template>

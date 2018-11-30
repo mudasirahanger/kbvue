@@ -21,7 +21,7 @@
     </f7-navbar>
     
     <f7-block >
-      <f7-title><h1 style="text-align: center; "> Welcome to the Kashmirbox</h1></f7-title>
+      <h1 style="text-align: center; "> Welcome to the Kashmirbox</h1>
       <f7-card>
 
         <f7-card-header style="background:black"></f7-card-header>

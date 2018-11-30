@@ -4,7 +4,7 @@
 
    <!-- <f7-navbar title="Back"> <Link back>Back</Link> </f7-navbar>-->
     <f7-block strong><h1> SORT BY</h1></f7-block>
-     <f7-navbar back-link="Back" ></f7-navbar>
+     <f7-navbar back-link="Back" >back</f7-navbar>
     <f7-block>
       <f7-link icon-if-ios="f7:filter-fill" icon-if-md="material:star_border" href="/category/1391#Men Clothings" > Newest</f7-link>
     </f7-block>

@@ -27,7 +27,7 @@
   	 <f7-list-item accordion-item title="WOMEN">
 	    <f7-accordion-content>
 	      <f7-list>
-	        <f7-list-item link="" title="SUMMER CLOTHING "></f7-list-item>
+	        <f7-list-item link="/category/142#Women" view="#main-view" title="SUMMER CLOTHING "  panel-close></f7-list-item>
 	        <f7-list-item link="" title="WINTER CLOTHING"></f7-list-item>
 	        <f7-list-item link="" title="PASHMINA "></f7-list-item>
 	        <f7-list-item link="" title="WOOLEN WRAPS"></f7-list-item>

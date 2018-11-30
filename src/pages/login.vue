@@ -1,7 +1,11 @@
 <template>
   <f7-page>
-    
-    <form  id="app" @submit="checkForm" action="https://vuejs.org/" method="post"
+    <f7-card>
+     <f7-card-header style="background:black; color:white;   "> 
+      KB-LOGIN
+     </f7-card-header>
+      <f7-card-content>
+           <form  id="app" @submit="checkForm" action="https://vuejs.org/" method="post"
   novalidate="true">
   <p v-if="errors.length">
     <b>Please correct the following error(s):</b>
@@ -30,12 +34,21 @@
  </f7-list>
 
   <p>
-    <f7-input  class="col button bold color-green" type="submit" >submit
+    <f7-input  class="col button bold color-black button-fill" type="submit" >submit
     </f7-input>
    
   </p>
 
 </form>
+  <f7-row>
+    <f7-col> <f7-link style="color:red"  href="/forget/" ><h4>forget Password?</h4></f7-link></f7-col>
+     <f7-col style="text-align:center"><f7-link style="color:black"  href="/form/" ><h3 >Sign Up</h3></f7-link></f7-col>
+  </f7-row>
+     </f7-card-content>
+
+    </f7-card>
+    
+   
 
       
      

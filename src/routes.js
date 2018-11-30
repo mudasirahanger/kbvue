@@ -1,5 +1,5 @@
 import HomePage   from './pages/home.vue';
-import Category from './pages/category.vue';
+import Categories from './pages/category.vue';
 import AboutPage  from './pages/about.vue';
 import FormPage   from './pages/form.vue';
 import Product    from  './pages/product.vue';
@@ -40,7 +40,7 @@ export default [
 
   {
     path: '/category/:pathId',
-    component: Category,
+    component: Categories,
   },
   {
     path:'/product/:pathId',

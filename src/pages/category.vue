@@ -4,9 +4,13 @@
   <!--v-smooth-scroll="{ duration: 1000, offset: -50 }-->
   <f7-page>
     
-   <f7-navbar v-bind:title=" $f7route.hash " back-link="Back" color="black"></f7-navbar>
+   <f7-navbar class=" toolbar-fixed navbar-fixed" v-bind:title=" $f7route.hash " back-link="Back" color="black"></f7-navbar>
 
-    <f7-block-title>This is category id : {{$f7route.params.pathId}} <h1>products  found {{products.length}}</h1></f7-block-title>
+    <f7-block-title>
+      <f7-row><f7-col>This is category id : {{$f7route.params.pathId}}
+      </f7-col><f7-col> products  found {{products.length}}</f7-col>
+
+      </f7-row></f7-block-title>
 
     <f7-block>
 
@@ -16,9 +20,10 @@
 
         <div class="col-50"  v-for="(product,index) in products"  :key="product.product_id"  v-if="products && products.length >0 && index <= limitationList">
           <f7-card>
-            <f7-card-header> <f7-label ><h4>{{product.name}}</h4></f7-label></f7-card-header>
-            <f7-card-content <f7-link  v-bind:link="'/product/'+product.product_id"></f7-link>
-              
+            <f7-card-header> 
+              <f7-label >
+                <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label></f7-card-header>
+            <f7-card-content               
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
             </f7-card-content>
           <f7-card-footer>
@@ -49,17 +54,17 @@
       </f7-row>
     </f7-row>
 </f7-block>
-  <div class="toolbar" style="background-color:black">
+  <div class="toolbar toolbar-fixed toolbar-bottom" style="background-color:black">
             <div class="toolbar-inner">
                <f7-nav-left>
-        <f7-link icon-if-ios="f7:sort" v-on:click=" openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
+        <f7-link icon-if-ios="f7:sort" v-on:click="openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
       </f7-nav-left>
       <h1>|</h1>
         <f7-nav-right>
         <f7-link icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-nav-right>
             </div>
-          </div>     
+          </div>    
   </f7-page>
 </template>
 
@@ -68,7 +73,7 @@ import axios from 'axios';
 export default {
    data: function () {
     return {
-      id:this.$f7route.params.pathId,
+       id:this.$f7route.params.pathId,
       products: {},
        limitationList:3,
         loading: true 
@@ -93,9 +98,8 @@ export default {
   
 },
   created(){
-          axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
-          window.scrollTo(0, document.body.scrollHeight ||
-           document.documentElement.scrollHeight);
+    axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
+          
         },  
 }
 
