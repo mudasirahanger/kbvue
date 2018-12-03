@@ -2,79 +2,101 @@
   <f7-page>
     <f7-card>
      <f7-card-header style="background:black; color:white;   "> 
-      KB-LOGIN
+        KB-LOGIN
      </f7-card-header>
       <f7-card-content>
-           <form  id="app" @submit="checkForm" action="https://vuejs.org/" method="post"
-  novalidate="true">
-  <p v-if="errors.length">
+        <f7-row>
+          <f7-col></f7-col>
+           <f7-col>
+          
+            <f7-label >hi</f7-label>
+          </f7-col>
+          <f7-col></f7-col>
+        </f7-row>
+        <form @submit.prevent="checkForm" action="/product/" method="post">
+          <f7-list >
+            <f7-list-item>
+           <f7-label floating>Email</f7-label>
+          <f7-input  @input="email=$event.target.value"  id="email" name="email" type="text" placeholder="Email" autocomplete="true" clear-button></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+           <f7-label floating>Password</f7-label>
+          <f7-input  @input="password=$event.target.value"  name="password" type="text" placeholder="Password" clear-button></f7-input> 
+        </f7-list-item>    
+       
+      </f7-list>
+       <button class=" button button-fill" style=" background:black"  type="submit">Log in</button>
+      </form>
+      <!--  <f7-list form  @submit.prevent="checkForm" >
+   Text Input -->
+ <!-- <p v-if="errors.length">
     <b>Please correct the following error(s):</b>
     <ul>
       <li  style ="color:red" v-for="error in errors">{{ error }}</li>
     </ul>
   </p>
-
-<f7-list>
-  <f7-list-item>
-    <label for="name">Name</label>
-  </f7-list-item>
-  <f7-list-item>
-    <f7-input id="email" v-model="email" type="email"  placeholder="Name">
-    </f7-input>
-  </f7-list-item>
- </f7-list>
-
- <f7-list>
-  <f7-list-item>
-    <label for="password">Email</label>
-    </f7-list-item>
-    <f7-list-item>
-    <input id="password" v-model="password" type="password" placeholder="password" name="password">
-  </f7-list-item>
- </f7-list>
-
-  <p>
-    <f7-input  class="col button bold color-black button-fill" type="submit" >submit
-    </f7-input>
-   
-  </p>
-
-</form>
+        <f7-list-item>
+        <f7-icon slot="media" f7="person"></f7-icon>
+         <f7-label floating>userName</f7-label>
+         <f7-input  @input="username=$event.target.value" name="username" type="text" placeholder="Username" clear-button></f7-input>
+         
+      </f7-list-item>-->
+  <!-- Password 
+      <f7-list-item>
+        <f7-icon slot="media" f7="lock"></f7-icon>
+        <f7-label floating>passWord</f7-label>
+        <f7-input  @input="password=$event.target.value" name="password" type="text" placeholder="Password" clear-button></f7-input>
+      </f7-list-item>-->
+       
+</f7-list>
   <f7-row>
     <f7-col> <f7-link style="color:red"  href="/forget/" ><h4>forget Password?</h4></f7-link></f7-col>
-     <f7-col style="text-align:center"><f7-link style="color:black"  href="/form/" ><h3 >Sign Up</h3></f7-link></f7-col>
+     <f7-col style="text-align:center">New to KB <f7-link style="color:red"  href="/form/" >create account</f7-link></f7-col>
   </f7-row>
      </f7-card-content>
 
     </f7-card>
-    
-   
-
-      
-     
-    </f7-list>
+     </f7-list>
   </f7-page>
 </template>
 
 <script>
-export default {
+
+
+export default 
+{
    data(){
     return{
     errors:[],
-    email:null,
-    password:null
-   
-  }
-  },
-  methods:{
-    checkForm:function(e) {
-      if(this.email && this.password) return true;
-      this.errors = [];
-      if(!this.name) this.errors.push("Email required.");
-      if(!this.email) this.errors.push("Password required.");
-      e.preventDefault();
+     email: '',
+     passowrd:''  
     }
-  }
+},
+  
+  methods: {
+     
+     checkForm() {
+     
+        if(this.email==='abc@gmail.com'&& this.password==="password") 
+        {
+        
+            alert("login successfull"),
+             this.$session.start();
 
+          }
+         if(this.email!=='abc@gmail.com' || this.password!=="password") 
+         {
+
+            alert(" email or password is incorrect")
+          }
+      }
+  },
+   onLogin(){
+      alert(this.username,this.password)
+    }
+  
 }
+   
+
+
 </script>

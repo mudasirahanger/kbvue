@@ -52,13 +52,13 @@
           <button @click=" getPostsViaREST " style=" border-radius: 100%;  height:60px; width:10px; background:black" class="col button button-small  button-fill"><h3>S</h3></button>
         </f7-col> 
         <f7-col>
-          <button style=" border-radius: 100%;  height:60px; width:10px;background:black" class=" button button-small  button-fill"><h3>M</h3></button>
+          <button  @click=" getPostsViaREST" style=" border-radius: 100%;  height:60px; width:10px;background:black" class=" button button-small  button-fill"><h3>M</h3></button>
         </f7-col>  
         <f7-col>
-          <button style=" border-radius: 100%;  height:60px; width:10px; background:black" class=" button button-small button-fill"><h3>L</h3></button>
+          <button @click=" getPostsViaREST" style=" border-radius: 100%;  height:60px; width:10px; background:black" class=" button button-small button-fill"><h3>L</h3></button>
         </f7-col>  
         <f7-col>
-          <button style=" border-radius: 100%;  height:60px; width:10px; background:black" class="col button button-small  button-fill"><h3>XL</h3></button>
+          <button @click=" getPostsViaREST" style=" border-radius: 100%;  height:60px; width:10px; background:black" class="col button button-small  button-fill"><h3>XL</h3></button>
         </f7-col>
 
       </f7-row>
@@ -68,26 +68,41 @@
     </f7-block>
     <f7-block>
      
-    
-
-    <f7-row  v-if=" products.length ">
-      
-      <f7-col>
-            
-            <h3>{{  products[0].name }}   </h3>
-      
-            <p>{{  products[0].description }} </p>
-
-            <span> {{ products[0].price }}</span>
-
-            
-      </f7-col>
+   <div class="row" >
+        <div class="col-50"  v-for="(product,index) in products" track-by="product_id" >
+          <f7-card>
+            <f7-card-header> 
+              <f7-label>
+                <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label></f7-card-header>
+            <f7-card-content               
+              <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
+            </f7-card-content>
+          <f7-card-footer>
+              <f7-row>
+                <f7-col>
+                  <f7-label > 
+                <h3>
+                ₹{{product.price}}  
+                <h3 >
+                  {{product.kbcode}}
+                </h3>
+              </h3>
+              </f7-label>
+                </f7-col>                
+              </f7-row>
+            <f7-label class="responsive" >    
+            </f7-label>
+          </f7-card-footer>  
+          </f7-card>
+        </div>
+      </div>
     </f7-row>
   </f7-block>
     <div class="row">
      
         <div class="col-50">
-         <f7-button  href="/login/" style="background:black; width:100%" class="button-fill button-full">
+         <f7-button @click='addToCart(product)' style="background:black; width:100%" class="button-fill button-full">
+
        
         Add To Cart </f7-button>
       </div>
@@ -98,22 +113,16 @@
         Add To Whislist </f7-button>
       </div>
     </div>
-      
- 
-   
-   
- 
-   
-  
   </f7-page>
 </template>
 <script>
 import axios from 'axios';
+
 export default {
    data: function () {
     return {
       id:this.$f7route.params.productId,
-      products: {}
+      products: []
     }
   },
   created(){
@@ -123,8 +132,28 @@ export default {
          methods: {
     getPostsViaREST (event) {
        axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path=442').then(response => {this.products = response.data})
-    }
-  },
+    },
+ 
+  addToCart(product, index){
+            if(this.cartItems.indexOf(product) == -1){
+                product.quantity = 1;
+                this.cartItems.push(item);         
+            }
+          }
+        },
+  computed: {
+        cartTotal(){
+            console.log('cart changed');
+            
+            var total = 0;
+
+            this.cartItems.map( (product) => {
+                total += (product.price * product.quantity);
+            });
+
+            return total;
+        }
+    },
   
 }
 </script>

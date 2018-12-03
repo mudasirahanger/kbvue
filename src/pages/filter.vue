@@ -100,38 +100,6 @@
                 </f7-col>
               </f7-row>
             </f7-col>
-            <f7-col>             
-      <f7-block>
-        <div class="row" >
-          <div class="col-100"  v-for="(product,index) in products"  :key="product.product_id">
-            <f7-card>
-              <f7-card-header> <f7-label ><h4>{{product.name}}</h4></f7-label></f7-card-header>
-              <f7-card-content> 
-                <f7-link  v-bind:link="'/product/'+product.product_id"></f7-link>
-                <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
-              </f7-card-content>
-            <f7-card-footer>
-                <f7-row>
-                  <f7-col>
-                    <f7-label > 
-                  <h3>
-                  ₹{{product.price}}  
-                  <h3 >
-                    {{product.kbcode}}
-                  </h3>
-                </h3>
-                </f7-label>
-                  </f7-col>                
-                </f7-row>
-
-              <f7-label class="responsive" >    
-              </f7-label>
-            </f7-card-footer>  
-            </f7-card>
-          </div>
-        </div>       
-              </f7-block>
-            </f7-col>
             </f7-col>
           </f7-row>
         </f7-page>

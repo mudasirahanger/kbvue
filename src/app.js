@@ -14,7 +14,7 @@ import Framework7Styles from 'framework7/css/framework7.css';
 import IconsStyles from './css/icons.css';
 import AppStyles from './css/app.css';
 
-
+import * as firebase from 'firebase'
 // Import App Component
 import App from './app.vue';
 //import vueSmoothScroll from 'vue-smooth-scroll';
@@ -36,5 +36,15 @@ new Vue({
   // Register App Component
   components: {
     app: App
-  }
+  },
+ //created(){
+  	//firebase.IntializeApp({
+  	//apiKey: 'AIzaSyAlIVk4JifErJb6i_-RsAR9Dz4RqDJyX8k',
+    //authDomain: 'mykb-c17bd.firebaseapp.com',
+    //databaseURL: 'https://mykb-c17bd.firebaseio.com',
+   // projectId: 'mykb-c17bd',
+   // storageBucket: 'mykb-c17bd.appspot.com'
+  	//})
+
+  //}-->
 });

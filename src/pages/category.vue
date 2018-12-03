@@ -7,8 +7,8 @@
    <f7-navbar class=" toolbar-fixed navbar-fixed" v-bind:title=" $f7route.hash " back-link="Back" color="black"></f7-navbar>
 
     <f7-block-title>
-      <f7-row><f7-col>This is category id : {{$f7route.params.pathId}}
-      </f7-col><f7-col> products  found {{products.length}}</f7-col>
+      <f7-row><f7-col class="col-50">This is category id : {{$f7route.params.pathId}}
+      </f7-col><f7-col class="col-50"> products  found {{products.length}}</f7-col>
 
       </f7-row></f7-block-title>
 
@@ -21,7 +21,7 @@
         <div class="col-50"  v-for="(product,index) in products"  :key="product.product_id"  v-if="products && products.length >0 && index <= limitationList">
           <f7-card>
             <f7-card-header> 
-              <f7-label >
+              <f7-label>
                 <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label></f7-card-header>
             <f7-card-content               
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
@@ -54,8 +54,9 @@
       </f7-row>
     </f7-row>
 </f7-block>
-  <div class="toolbar toolbar-fixed toolbar-bottom" style="background-color:black">
-            <div class="toolbar-inner">
+  <f7-toolbar class="toolbar  toolbar-bottom-md" > 
+ 
+             <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
                <f7-nav-left>
         <f7-link icon-if-ios="f7:sort" v-on:click="openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
       </f7-nav-left>
@@ -63,8 +64,8 @@
         <f7-nav-right>
         <f7-link icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-nav-right>
-            </div>
-          </div>    
+            </f7-toolbar>
+          </f7-toolbar>    
   </f7-page>
 </template>
 
