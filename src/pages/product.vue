@@ -20,7 +20,7 @@
     <f7-block  >
          <f7-row  v-if=" products.length " :key="products.product_Id">
       <f7-col style="height:100%">
-            <f7-swiper pagination style="border:solid; " >
+            <f7-swiper pagination >
               <f7-swiper-slide>
                 <img  v-bind:src=" products[0].thumb " width="100%" />
               </f7-swiper-slide>
@@ -28,15 +28,7 @@
               <f7-swiper-slide><img  v-bind:src=" products[0].thumb "  width="100%"/></f7-swiper-slide>
             </f7-swiper>
       </f7-col>
-      <f7-col>
-            <f7-swiper pagination style="border:solid; " >
-              <f7-swiper-slide>
-                <img  v-bind:src=" products[0].thumb " width="100%" />
-              </f7-swiper-slide>
-              <f7-swiper-slide><img  class="responsive" v-bind:src=" products[0].thumb " width="100%" /></f7-swiper-slide>
-              <f7-swiper-slide><img  v-bind:src=" products[0].thumb "  width="100%"/></f7-swiper-slide>
-            </f7-swiper>
-      </f7-col>
+      
     </f7-row>
        
     </f7-block >
@@ -66,53 +58,125 @@
        
       
     </f7-block>
-    <f7-block>
+    <!--<f7-block>
      
    <div class="row" >
-        <div class="col-50"  v-for="(product,index) in products" track-by="product_id" >
+        <div class="col-100"  v-for="(product,index) in products.slice(2,4)" track-by="product_id" >
           <f7-card>
             <f7-card-header> 
               <f7-label>
-                <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label></f7-card-header>
+                <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label>
+                </f7-card-header>
             <f7-card-content               
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
-            </f7-card-content>
-          <f7-card-footer>
+              <f7-row>
+                <f7-col>₹{{product.price}}</f7-col>               
+               
+              </f7-row>
               <f7-row>
                 <f7-col>
-                  <f7-label > 
-                <h3>
-                ₹{{product.price}}  
-                <h3 >
-                  {{product.kbcode}}
-                </h3>
-              </h3>
-              </f7-label>
-                </f7-col>                
+                   <h4> {{product.kbcode}}</h4>
+                </f7-col>
+
               </f7-row>
-            <f7-label class="responsive" >    
-            </f7-label>
+             
+            </f7-card-content>
+          <f7-card-footer>
+              
+             
+        
           </f7-card-footer>  
           </f7-card>
         </div>
       </div>
     </f7-row>
-  </f7-block>
-    <div class="row">
-     
-        <div class="col-50">
-         <f7-button @click='addToCart(product)' style="background:black; width:100%" class="button-fill button-full">
-
-       
+  </f7-block>-->
+   <f7-toolbar class="toolbar  toolbar-bottom-md" > 
+ 
+             <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
+               <f7-nav-left>
+         <f7-button @click='addToCart(product)' style="background:black; width:100%" class="button-fill button-full">      
         Add To Cart </f7-button>
-      </div>
-      
-      <div class="col-50">
+      </f7-nav-left>
+      <h1>|</h1>
+        <f7-nav-right>
          <f7-button style="background:black; width:100%" class="button-fill button-full">
      
         Add To Whislist </f7-button>
+      </f7-nav-right>
+            </f7-toolbar>
+            
+   </f7-toolbar>
+   <f7-card>
+
+     <f7-card-header>Dilevery & Services</f7-card-header>
+     <f7-block> <f7-searchbar placeholder="Enter Pincode"><button style="background:black; color:white; border-width:none; height:50px "> Pin Code</button> </f7-searchbar></f7-block>
+     <f7-card-content>
+
+       <f7-list>
+         <f7-list-item>
+           100% Original Products
+         </f7-list-item>
+          <f7-list-item>
+           Easy 30 days returns & 30 days exchanges
+         </f7-list-item>
+          <f7-list-item>
+          Free Delivery on order above Rs. 1199
+         </f7-list-item>
+          <f7-list-item>
+          Try & Buy might be available
+         </f7-list-item>
+          
+       </f7-list>
+     </f7-card-content>
+
+   </f7-card>
+   <!-- Similar Products-->
+   <f7-card>
+    <f7-card-content>
+        <f7-block>
+        <f7-row>
+         <h4> Similar Product</h4>
+         <f7-col> 
+            <div class="row" >
+        <div class="col-100"   >
+             <f7-swiper pagination style="color:black"   >
+              <f7-swiper-slide  v-for="(product,index) in products"  :key="product.product_id">
+                <f7-card>
+                  <f7-card-header>
+                    <f7-button style="color:black">{{product.name}}</f7-button></f7-card-header>
+                  <f7-content>
+                <img  v-bind:src=" product.thumb " width="100%" />
+              </f7-content>
+              <f7-row>
+                <f7-col>
+                   <h4>
+                    {{product.kbcode}}  |  
+                    ₹{{product.price}}  
+                  </h4>
+                   <h4>
+                    <f7-col style="color:red"> (10% OFF) </f7-col>
+                   </h4>
+                    <f7-row >
+                <f7-col > 
+                  <f7-link v-for="i in 5" :key="product.product_id" style="color:orange"  icon-if-md="material: star" ></f7-link>
+                  </f7-col>
+              </f7-row>
+                </f7-col>
+              </f7-row>
+                </f7-card>
+              </f7-swiper-slide>
+            </f7-swiper>
+          </div>
       </div>
-    </div>
+    </f7-col>
+
+
+         </f7-col>  
+        </f7-row>
+      </f7-block>
+    </f7-card-content>
+   </f7-card>
   </f7-page>
 </template>
 <script>

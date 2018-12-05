@@ -1,11 +1,18 @@
 <template>
   <f7-page>
+    <f7-navbar class=" toolbar-fixed navbar-fixed" v-bind:title=" $f7route.hash " back-link="Back" color="black" title="Back"></f7-navbar>
     <f7-card>
   
-    <f7-card-header style="background:black; color:white;   "> 
-      SIGN-UP
+    <f7-card-header style="background:black; color:white; text-align:center"> 
+       <f7-row>
+        
+           <f7-col >
+                <h3>SignUp</h3>
+            
+          </f7-col>
+     </f7-row>
      </f7-card-header>
-      <f7-link icon-if-ios="f7:sort" v-on:click="openIndicator()" icon-if-md="material:person" href="/sort/" > Sort </f7-link>
+      
   <f7-card-content>
     <f7-list @submit.prevent="onSignUp" action="/product/" method="post">
       <f7-list-item>
@@ -47,7 +54,7 @@
     </f7-list></f7-card-content>
   <f7-card-footer style="background:black"></f7-card-footer>
 </f7-card>
-    <f7-navbar  title="" back-link="Back"></f7-navbar>
+    
    
   </f7-page>
 </template>

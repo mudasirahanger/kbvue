@@ -2,17 +2,19 @@
   <f7-page>
     <f7-card>
      <f7-card-header style="background:black; color:white;   "> 
-        KB-LOGIN
+       <f7-navbar class=" toolbar-fixed navbar-fixed" v-bind:title=" $f7route.hash " back-link="Back" color="black" title="Back"></f7-navbar>
      </f7-card-header>
       <f7-card-content>
+       
         <f7-row>
-          <f7-col></f7-col>
+        
            <f7-col>
-          
-            <f7-label >hi</f7-label>
+                <h1 style="text-align:center">KB-LOGIN</h1>
+            
           </f7-col>
-          <f7-col></f7-col>
+          
         </f7-row>
+  
         <form @submit.prevent="checkForm" action="/product/" method="post">
           <f7-list >
             <f7-list-item>
@@ -51,7 +53,7 @@
 </f7-list>
   <f7-row>
     <f7-col> <f7-link style="color:red"  href="/forget/" ><h4>forget Password?</h4></f7-link></f7-col>
-     <f7-col style="text-align:center">New to KB <f7-link style="color:red"  href="/form/" >create account</f7-link></f7-col>
+     <f7-col style="text-align:center"><h4>New to KB ?<f7-link style="color:red"  href="/form/" >create account</f7-link></h4></f7-col>
   </f7-row>
      </f7-card-content>
 

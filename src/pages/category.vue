@@ -12,35 +12,38 @@
 
       </f7-row></f7-block-title>
 
-    <f7-block>
-
-      
+  <f7-block>
       <div class="row" >
-
-
         <div class="col-50"  v-for="(product,index) in products"  :key="product.product_id"  v-if="products && products.length >0 && index <= limitationList">
           <f7-card>
             <f7-card-header> 
               <f7-label>
-                <a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a></f7-label></f7-card-header>
+                
+                <f7-button><a style="color:black" v-bind:href="'/product/'+product.product_id" >{{product.name}}</a> </f7-button>
+              </f7-label>
+            </f7-card-header>
             <f7-card-content               
               <img class="responsive" v-bind:src=" product.thumb "  width="100%" />
-            </f7-card-content>
-          <f7-card-footer>
               <f7-row>
                 <f7-col>
-                  <f7-label > 
-                <h3>
-                ₹{{product.price}}  
-                <h3 >
-                  {{product.kbcode}}
-                </h3>
-              </h3>
-              </f7-label>
-                </f7-col>                
+                  <h4>
+                    {{product.kbcode}}  |  
+                    ₹{{product.price}}  
+                  </h4>
+                   <h4>
+                    <f7-col style="color:red"> (10% OFF) </f7-col>
+                   </h4>
+              <f7-row >
+                <f7-col > 
+                  <f7-link v-for="i in 5" :key="product.product_id" style="color:orange"  icon-if-md="material: star" ></f7-link>
+                  </f7-col>
               </f7-row>
-            <f7-label class="responsive" >    
-            </f7-label>
+                </f7-col> 
+              </f7-row>
+            </f7-card-content>
+          <f7-card-footer>
+             
+              
           </f7-card-footer>  
           </f7-card>
         </div>
@@ -54,6 +57,7 @@
       </f7-row>
     </f7-row>
 </f7-block>
+
   <f7-toolbar class="toolbar  toolbar-bottom-md" > 
  
              <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
