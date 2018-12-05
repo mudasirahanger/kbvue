@@ -30,7 +30,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
-  }, "homepage": "http://framework7.io/vue/",
+  },
+  "homepage": "http://framework7.io/vue/",
   "dependencies": {
     "axios": "^0.18.0",
     "framework7": "^3.4.0",
@@ -41,7 +42,8 @@
     "vue-localstorage": "^0.6.2",
     "vue-onload": "^0.2.0",
     "vue-resource": "^1.5.1",
-    "vue-smooth-scroll": "^1.0.13"
+    "vue-smooth-scroll": "^1.0.13",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

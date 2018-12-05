@@ -14,10 +14,11 @@ import Framework7Styles from 'framework7/css/framework7.css';
 import IconsStyles from './css/icons.css';
 import AppStyles from './css/app.css';
 
-import * as firebase from 'firebase'
+//import * as firebase from 'firebase'
 // Import App Component
 import App from './app.vue';
 //import vueSmoothScroll from 'vue-smooth-scroll';
+import Vuex from 'vuex/dist/vuex.min.js'
 
 import axios from 'axios/dist/axios.min.js';
 import vue from 'vue/dist/vue.min.js';

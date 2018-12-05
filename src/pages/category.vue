@@ -41,10 +41,6 @@
                 </f7-col> 
               </f7-row>
             </f7-card-content>
-          <f7-card-footer>
-             
-              
-          </f7-card-footer>  
           </f7-card>
         </div>
       </div>
