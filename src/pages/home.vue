@@ -19,20 +19,15 @@
        
       </f7-nav-right>
     </f7-navbar>
+     <h1 style="text-align: center; "> Welcome to the Kashmirbox</h1>
+     <img src="https://cashmere.kashmirbox.com/catalog/view/theme/kashmirbox_cash/images/main/Main-banner.jpg" height="150px" width="100%">
     
     <f7-block >
-      <h1 style="text-align: center; "> Welcome to the Kashmirbox</h1>
-      <f7-card>
-
-        <f7-card-header style="background:black"></f7-card-header>
-        <f7-card-content >
-          <img src="https://www.kashmirbox.com/catalog/view/theme/kashmirbox_1_5/images/new_1_5/cashmere-pashmina-store.jpg" height="40%" width="100%">
-         
-         
-        </f7-card-content >
-        <f7-card-footer style="background:black"><f7-link  icon-if-ios="f7:filter-fill" href="/category/1391#Men Clothings" > Mens Clothing</f7-link> 
-        </f7-card-footer>
-      </f7-card>
+      <button class=" button  button- fill " style="background:black">
+       <f7-link  style="color:white; font-size:12px" icon-if-ios="f7:filter-fill" href="/category/1391#Men Clothings" > Click Me  Mens Clothing---></f7-link> 
+     </button>
+       
+    
      </f7-block>
     
      

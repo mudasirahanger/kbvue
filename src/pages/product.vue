@@ -52,7 +52,7 @@
       <f7-toolbar class="toolbar  toolbar-bottom-md" > 
         <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
           <f7-nav-left>
-            <f7-button @click='addToCart(product)' style="background:black; width:100%" class="       button-fill button-full">  Add To Cart    
+            <f7-button href="/login/"  style="background:black; width:100%" class="button-fill button-full">  Add To Cart    
             </f7-button>
           </f7-nav-left>
             <h1>|</h1>
