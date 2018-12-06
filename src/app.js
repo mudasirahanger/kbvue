@@ -17,7 +17,8 @@ import AppStyles from './css/app.css';
 // Import App Component
 import App from './app.vue';
 //import vueSmoothScroll from 'vue-smooth-scroll';
-import vuex from 'vuex/dist/vuex.min.js'
+import vuex from 'vuex/dist/vuex.min.js';
+import vuesession  from 'vue-session';
 import axios from 'axios/dist/axios.min.js';
 import vue from 'vue/dist/vue.min.js';
 import vueresource from 'vue-resource/dist/vue-resource.min.js';

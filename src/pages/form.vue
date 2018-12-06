@@ -52,7 +52,7 @@
         <f7-input type="date" placeholder="Birth date" value="2014-04-30"></f7-input>
       </f7-list-item> -->  
     </f7-list></f7-card-content>
-  <f7-card-footer style="background:black"></f7-card-footer>
+   
 </f7-card>
     
    

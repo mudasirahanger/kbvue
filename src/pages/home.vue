@@ -20,7 +20,7 @@
       </f7-nav-right>
     </f7-navbar>
      <h1 style="text-align: center; "> Welcome to the Kashmirbox</h1>
-     <img src="https://cashmere.kashmirbox.com/catalog/view/theme/kashmirbox_cash/images/main/Main-banner.jpg" height="150px" width="100%">
+     <img src="https://www.kashmirbox.com/offers/images/Main-banner.jpg" height="auto" width="100%">
     
     <f7-block >
       <button class=" button  button- fill " style="background:black">

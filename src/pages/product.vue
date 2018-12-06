@@ -89,18 +89,18 @@
           <f7-row>
             <h4> Similar Product</h4>
             <f7-col> 
+              <f7-swiper pagination   >
+                <f7-swiper-slide v-for="(product,index) in products"  :key="product.product_id" >
               <div class="row" >
-                <div class="col-100"   >
-                  <f7-swiper pagination  >
-                    <f7-swiper-slide  v-for="(product,index) in products"  :key="product.product_id">
-                      <f7-card>
-                        <f7-card-header>
+                <div class="col-100" >
+                  <f7-card  >
+                        <f7-card-header >
                           <f7-button style="color:black">{{product.name}}
                           </f7-button>
                         </f7-card-header>
-                        <f7-content>
+                        <f7-card-content >
                           <img  v-bind:src=" product.thumb " width="100%" />
-                        </f7-content>
+                        </f7-card-content>
                 <f7-row>
                   <f7-col>
                     <h4>
@@ -118,14 +118,15 @@
                   </f7-col>
               </f7-row>
                   </f7-card>
-                </f7-swiper-slide>
-              </f7-swiper>
+                
             </div>
         </div>
-      </f7-col>
-      </f7-col>  
-      </f7-row>
-      </f7-block>
+       </f7-swiper-slide>
+    </f7-swiper>
+              </f7-col>
+            </f7-col>  
+          </f7-row>
+        </f7-block>
       </f7-card-content>
     </f7-card>
   </f7-page>
