@@ -3,6 +3,7 @@ import Categories from './pages/category.vue';
 import AboutPage  from './pages/about.vue';
 import FormPage   from './pages/form.vue';
 import Product    from  './pages/product.vue';
+import Cart    from  './pages/cart.vue';
 import Login      from './pages/login.vue';
 import Sort      from './pages/sort.vue';
 import Filter      from './pages/filter.vue';
@@ -36,11 +37,13 @@ export default [
     path: '/filter/',
     component: Filter,
   },
-
-
   {
     path: '/category/:pathId',
     component: Categories,
+  },
+  {
+    path: '/cart/:pathId',
+    component:Cart,
   },
   {
     path:'/product/:pathId',

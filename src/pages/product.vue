@@ -14,18 +14,15 @@
       </f7-nav-right>
     </f7-navbar>
       <f7-block  >
-        <f7-row  v-if=" products.length " :key="products.product_Id">
+        This is product id : {{$f7route.params.pathId}}
+        <f7-row  v-if="products.length" :key="products.product_id" >
           <f7-col style="height:100%">
-            <f7-swiper pagination >
-              <f7-swiper-slide>
                 <img  v-bind:src=" products[0].thumb " width="100%" />
-              </f7-swiper-slide>
-              <f7-swiper-slide>
-                <img  class="responsive" v-bind:src=" products[0].thumb " width="100%" />
-              </f7-swiper-slide>
-              <f7-swiper-slide>
-                <img  v-bind:src=" products[0].thumb "  width="100%"/></f7-swiper-slide>
-              </f7-swiper>
+                  <h3>{{  products[0].name }}  </h3>
+                <p>{{products[0].description }} </p>
+               <span> {{ products[0].price }}</span>
+                <f7-button v-on:click="addToCart(product)" style="background-color:#e40046;color:white">Add To Cart
+           </f7-button>
           </f7-col> 
         </f7-row> 
       </f7-block >
@@ -52,7 +49,7 @@
       <f7-toolbar class="toolbar  toolbar-bottom-md" > 
         <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
           <f7-nav-left>
-            <f7-button href="/login/"  style="background:black; width:100%" class="button-fill button-full">  Add To Cart    
+            <f7-button href="/login/" style="background:black; width:100%" class="button-fill button-full">  Add To Cart    
             </f7-button>
           </f7-nav-left>
             <h1>|</h1>
@@ -76,14 +73,16 @@
               <f7-list-item>
               Free Delivery on order above Rs. 1199
              </f7-list-item>
-              <f7-list-item>
+             <f7-list-item>
               Try & Buy might be available
-             </f7-list-item>   
+             </f7-list-item>
+               
            </f7-list>
+          
         </f7-card-content>
       </f7-card>
    <!-- Similar Products-->
-    <f7-card>
+  <!--  <f7-card>
       <f7-card-content>
         <f7-block>
           <f7-row>
@@ -95,8 +94,9 @@
                 <div class="col-100" >
                   <f7-card  >
                         <f7-card-header >
-                          <f7-button style="color:black">{{product.name}}
+                          <f7-button v-on:click="addToCart(product)" style="color:black">{{product.name}}
                           </f7-button>
+                          <button v-on></button>
                         </f7-card-header>
                         <f7-card-content >
                           <img  v-bind:src=" product.thumb " width="100%" />
@@ -128,7 +128,7 @@
           </f7-row>
         </f7-block>
       </f7-card-content>
-    </f7-card>
+    </f7-card>-->
   </f7-page>
 </template>
 <script>
@@ -137,20 +137,28 @@ import axios from 'axios';
 export default {
    data: function () {
     return {
-      id:this.$f7route.params.productId,
-      products: []
+      total:0,
+      id:this.$f7route.params.pathId,
+      products: {}
+      
     }
+    cart:[]
   },
   created(){
-           axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&product_id='+this.id).then(response => {this.products = response.data})
+            axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
           // window.addEventListener('scroll', this.handleScroll); // helps to handle scroll //
         },
          methods: {
     getPostsViaREST (event) {
        axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path=442').then(response => {this.products = response.data})
-    }
+    },
+     addToCart: function(product) 
+  {
+   
+     this.cart.product(product);
+     //console.log(product.price);
+  }
  
-  },
-  
+  } 
 }
 </script>

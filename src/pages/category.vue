@@ -10,7 +10,9 @@
       <f7-row><f7-col class="col-50">This is category id : {{$f7route.params.pathId}}
       </f7-col><f7-col class="col-50"> products  found {{products.length}}</f7-col>
 
-      </f7-row></f7-block-title>
+      </f7-row>
+    <f7-block-title> {{ $f7route.hash }} </f7-block-title>
+  </f7-block-title>
 
   <f7-block>
       <div class="row" >
@@ -35,7 +37,7 @@
                    </h4>
               <f7-row >
                 <f7-col > 
-                  <f7-link v-for="i in 5" :key="product.product_id" style="color:orange"  icon-if-md="material: star" ></f7-link>
+                  <f7-link v-for="i in 5"  style="color:orange"  icon-if-md="material: star" ></f7-link>
                   </f7-col>
               </f7-row>
                 </f7-col> 
@@ -75,7 +77,7 @@ export default {
    data: function () {
     return {
        id:this.$f7route.params.pathId,
-      products: {},
+      products: [],
        limitationList:3,
         loading: true 
     }
@@ -99,7 +101,7 @@ export default {
   
 },
   created(){
-    axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
+       axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path='+this.id).then(response => {this.products = response.data})
           
         },  
 }

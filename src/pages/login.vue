@@ -70,10 +70,11 @@ export default
         if(this.email==='abc@gmail.com'&& this.password==="password") 
         {
             alert("login successfull"),
-             this.$session.start(),
+           /*  this.$session.start(),
              this.$session.id(),
              this.$session.set('jwt', response.body.token)
-              this.$router.replace({ name: "product" });
+              this.$router.replace({ name: "product" });*/
+              localStorage.setItem('Sameer','1');
 
             
 
