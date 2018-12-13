@@ -15,16 +15,46 @@
     </f7-navbar>
       <f7-block  >
         This is product id : {{$f7route.params.pathId}}
-        <f7-row  v-if="products.length" :key="products.product_id" >
+
+   <f7-row v-for="(product,index) in products" :key="product.product_id">
+          <f7-col>
+            <img  v-bind:src=" product.thumb " width="100%" />
+            {{product.name}}
+            {{product.price}}
+
+          </f7-col>
+
+          <f7-button v-on:click="addToCart(product)" style="background-color:#e40046;color:white">Add To Cart
+
+        </f7-button>
+
+        </f7-row>
+        <f7-card>
+          <f7-card-content>
+            <f7-card-header>Cart products</f7-card-header>
+         <h4> total amount{{total}}</h4>
+       </f7-card-content>
+       </f7-card>
+        
+           
+       <!--<f7-row  v-if="products.length" :key="products.product_id" >
           <f7-col style="height:100%">
-                <img  v-bind:src=" products[0].thumb " width="100%" />
-                  <h3>{{  products[0].name }}  </h3>
+            <f7-swiper pagination    >
+               <f7-swiper-slide v-for="i in 4">
+                    <img v-bind:src=" products[0].thumb " width="100%" />
+                </f7-swiper-slide>
+           </f7-swiper>
+           
+                <h3>{{ products[0].name }}  </h3>
                 <p>{{products[0].description }} </p>
                <span> {{ products[0].price }}</span>
-                <f7-button v-on:click="addToCart(product)" style="background-color:#e40046;color:white">Add To Cart
-           </f7-button>
+               <f7-button class="button " style="background-color:#e40046;color:white"><a style="color:white" v-bind:href="'/cart/'+products.product_id" > Add To Cart</a> </f7-button>
+               
+            
           </f7-col> 
-        </f7-row> 
+        </f7-row>-->
+      
+
       </f7-block >
       <f7-block>
         <f7-row>
@@ -49,8 +79,10 @@
       <f7-toolbar class="toolbar  toolbar-bottom-md" > 
         <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
           <f7-nav-left>
-            <f7-button href="/login/" style="background:black; width:100%" class="button-fill button-full">  Add To Cart    
-            </f7-button>
+             <f7-button style="background:black; width:100%" class="button-fill button-full">
+               Add To Cart </f7-button>
+              </f7-label>
+            
           </f7-nav-left>
             <h1>|</h1>
           <f7-nav-right>
@@ -81,8 +113,8 @@
           
         </f7-card-content>
       </f7-card>
-   <!-- Similar Products-->
-  <!--  <f7-card>
+   <!-- Similar Products
+   <f7-card v-onLoad="similarproducts">
       <f7-card-content>
         <f7-block>
           <f7-row>
@@ -134,29 +166,38 @@
 <script>
 import axios from 'axios';
 
+
 export default {
+
    data: function () {
     return {
+       id:this.$f7route.params.pathId,
+      products: {},
       total:0,
-      id:this.$f7route.params.pathId,
-      products: {}
-      
+      cart:[],
+     
     }
-    cart:[]
-  },
+
+          
+    },
+   
+   
   created(){
-            axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
+             axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
           // window.addEventListener('scroll', this.handleScroll); // helps to handle scroll //
+          
         },
          methods: {
     getPostsViaREST (event) {
        axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path=442').then(response => {this.products = response.data})
     },
-     addToCart: function(product) 
+    
+    addToCart(product) 
   {
-   
-     this.cart.product(product);
-     //console.log(product.price);
+    this.total+=product.price;
+    alert(this.total+product.kbcode);
+     this.cart.push(product);
+    //console.log(this.total);
   }
  
   } 

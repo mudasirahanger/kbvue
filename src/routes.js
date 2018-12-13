@@ -4,6 +4,7 @@ import AboutPage  from './pages/about.vue';
 import FormPage   from './pages/form.vue';
 import Product    from  './pages/product.vue';
 import Cart    from  './pages/cart.vue';
+import Btn    from  './pages/Btn.vue';
 import Login      from './pages/login.vue';
 import Sort      from './pages/sort.vue';
 import Filter      from './pages/filter.vue';
@@ -17,6 +18,7 @@ export default [
     path: '/',
     component: HomePage,
   },
+
   {
     path: '/panel-left/',
     component: PanelLeftPage,
@@ -28,6 +30,10 @@ export default [
   {
     path: '/about/',
     component: AboutPage,
+  },
+  {
+    path: '/Btn/',
+    component: Btn,
   },
   {
     path: '/sort/',

@@ -19,11 +19,14 @@ import App from './app.vue';
 //import vueSmoothScroll from 'vue-smooth-scroll';
 import vuex from 'vuex/dist/vuex.min.js';
 import vuesession  from 'vue-session';
+import { mapGetters, mapActions } from 'vuex';
+
 import axios from 'axios/dist/axios.min.js';
 import vue from 'vue/dist/vue.min.js';
 import vueresource from 'vue-resource/dist/vue-resource.min.js';
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
+Vue.use(vuex)
 
 // Init App
 new Vue({

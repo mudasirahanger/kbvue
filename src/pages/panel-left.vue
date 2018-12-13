@@ -40,9 +40,9 @@
 	        <f7-list-item accordion-item link="" title="HEALTHY FOODS">
 	        	 <f7-accordion-content> 
 	         <f7-list> 
-	         	 <f7-list-item link :to="'/product/' + product.id" tag="h4"><a>
-	         	 {{ product.name }}</a></f7-list-item link >
-	        	<f7-list-item link="/dryFruits/name" main:pushState="true" title="Dry Fruits" view="#main-view">
+	         	<!-- <f7-list-item link :to="'/product/' + product.id" tag="h4"><a>
+	         	 {{ product.name }}</a></f7-list-item link >-->
+	        	<f7-list-item link="/category/442#Dry Fruits" main:pushState="true" title="Dry Fruits" view="#main-view">
 	        	</f7-list-item>
 	        </f7-list>
 	        </f7-accordion-content>

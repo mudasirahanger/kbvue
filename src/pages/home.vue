@@ -29,6 +29,38 @@
        
     
      </f7-block>
+     <f7-block>
+       <f7-card  >
+        <f7-card-header > <h1>Top Selling Products</h1></f7-card-header>
+        <f7-card-content>
+          <f7-swiper pagination >
+            <f7-row >
+              <f7-col class="col-33"  >
+           <f7-swiper-slide v-for="i in 2"  >
+             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/healthy_living/exotic_foods/dryfruits/snow_white_walnut_kernel-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
+
+         </f7-col>
+         <f7-col class="col-33"   >
+           <f7-swiper-slide v-for="i in 2" >
+             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/women/clothing/sarees/KB8368(12)-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
+           
+         </f7-col>
+          <f7-col class="col-33"  >
+           <f7-swiper-slide v-for="i in 2"  >
+             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/craft/chainstitch/KB8189(2)-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
+           
+         </f7-col>
+       </f7-row>
+
+         
+            
+          </f7-swiper>
+        </f7-card-content>
+       </f7-card>
+     </f7-block>
     
      
   </f7-page>
