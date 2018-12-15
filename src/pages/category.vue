@@ -61,14 +61,14 @@
              <f7-toolbar class="toolbar-inner" style="background-color:black;"  >
                <f7-nav-left>
                  <f7-row >
-        <f7-link style="font-size:20px;width:300px" icon-if-ios="f7:sort" v-on:click="openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
+        <f7-link style="font-size:20px;width:150px" icon-if-ios="f7:sort" v-on:click="openIndicator()" icon-if-md="material:sort" href="/sort/" > Sort </f7-link>
       </f7-row>
         
       </f7-nav-left>
       <h1>|</h1>
         <f7-nav-right>
           <f7-row >
-        <f7-link style="font-size:20px;width:300px" icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
+        <f7-link style="font-size:20px;width:150px" icon-if-ios="f7:filter-fill" link="/category/1391#Men Clothings" v-on:click=" openIndicator()" href="/filter/" icon-if-md="material:filter_list"> Filter</f7-link> 
       </f7-row>
       </f7-nav-right>
             </f7-toolbar>
