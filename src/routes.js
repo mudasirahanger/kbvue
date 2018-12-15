@@ -48,7 +48,7 @@ export default [
     component: Categories,
   },
   {
-    path: '/cart/:pathId',
+    path: '/cart/',
     component:Cart,
   },
   {

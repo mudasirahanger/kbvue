@@ -5,14 +5,13 @@
       <f7-nav-left>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
-       
       <f7-nav-title>KB</f7-nav-title>
       <f7-nav-right>
         <f7-nav-right>
           </f7-nav-right>
           <f7-nav-left>
         <f7-link icon-if-md="material:favorite"  href="/login/"></f7-link>
-         <f7-link icon-if-ios="f7:shopping_cart"icon-if-md="material:shopping_cart" ></f7-link>
+         <f7-link icon-if-ios="f7:shopping_cart" icon-if-md="material:shopping_cart" ></f7-link>
           <f7-link icon-if-md="material:search" ></f7-link>
       </f7-nav-left>
         
@@ -36,26 +35,48 @@
           <f7-swiper pagination >
             <f7-row >
               <f7-col class="col-33"  >
-           <f7-swiper-slide v-for="i in 2"  >
+           <f7-swiper-slide  >
              <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/healthy_living/exotic_foods/dryfruits/snow_white_walnut_kernel-786x1000.jpg" height="auto" width="100%">
            </f7-swiper-slide>
 
          </f7-col>
          <f7-col class="col-33"   >
-           <f7-swiper-slide v-for="i in 2" >
+           <f7-swiper-slide  >
              <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/women/clothing/sarees/KB8368(12)-786x1000.jpg" height="auto" width="100%">
            </f7-swiper-slide>
            
          </f7-col>
           <f7-col class="col-33"  >
-           <f7-swiper-slide v-for="i in 2"  >
-             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/craft/chainstitch/KB8189(2)-786x1000.jpg" height="auto" width="100%">
+           <f7-swiper-slide  >
+             <img  src="https://www.kashmirbox.com/image/cache/data/KB%20Product%20Images/Shop%20by%20Craft/Paper%20Mache/KB2407%20(1)-786x1000.jpg" height="auto" width="100%">
            </f7-swiper-slide>
            
          </f7-col>
        </f7-row>
+            
+          </f7-swiper>
+        </f7-card-content>
+         <f7-swiper pagination >
+            <f7-row >
+              <f7-col class="col-33"  >
+           <f7-swiper-slide  >
+             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/healthy_living/exotic_foods/dryfruits/snow_white_walnut_kernel-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
 
-         
+         </f7-col>
+         <f7-col class="col-33"   >
+           <f7-swiper-slide  >
+             <img  src="https://www.kashmirbox.com/image/cache/catalog/Kb_Images/women/clothing/sarees/KB8368(12)-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
+           
+         </f7-col>
+          <f7-col class="col-33"  >
+           <f7-swiper-slide  >
+             <img  src="https://www.kashmirbox.com/image/cache/data/KB%20Product%20Images/Shop%20by%20Craft/Paper%20Mache/KB2407%20(1)-786x1000.jpg" height="auto" width="100%">
+           </f7-swiper-slide>
+           
+         </f7-col>
+       </f7-row>
             
           </f7-swiper>
         </f7-card-content>
