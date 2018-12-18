@@ -16,11 +16,19 @@
    <f7-block v-for="(product,index) in products" :key="product.product_id" >
     This is product id : {{$f7route.params.pathId}}
     <f7-row >
+
       <f7-col>
-        <img  v-bind:src=" product.thumb " width="100%" />
+         <img  v-bind:src=" product.thumb " width="100%" />
+        <f7-list>
+          <f7-list-item>
+       
         {{product.name}}
+      </f7-list-item>
+      <f7-list-item>
         <!--{{product.price}}-->
         price=Rs 1200
+      </f7-list-item>
+      </f7-list>
       </f7-col>
     </f7-row>
     <f7-row>
@@ -37,16 +45,18 @@
    </f7-row>
    <f7-card>
     <f7-card-content>
-      <f7-card-header ><h3>Your Cart</h3></f7-card-header>
-      <f7-row style="width:100%" >
+      <f7-card-header><h3>Your Cart</h3></f7-card-header>
+      <f7-row style="width:100%" > 
+        <f7-col >
         <img  v-bind:src=" product.thumb " width="100%" />
-        
-        <f7-row>
+      </f7-col >
+      
+    </f7-row>
+  </f7-row>
           <f7-col>
-
           <f7-list>
             <f7-list-item>
-             {{product.name}}
+             {{product.name}} 
            </f7-list-item>
            <f7-list-item>
              <!-- ₹ {{product.price}}-->
@@ -57,23 +67,10 @@
 
              total:₹{{total}}
            </f7-list-item>
-           <f7-list-item>
-             <f7-button  style="background-color:#504C47;color:white; width:100%" icon-if-md="material:shopping_cart" > Check Out </f7-button>
-
-           </f7-list-item>
-           <f7-list-item>
-             <f7-button  style="background-color:#504C47;color:white;width:100% " icon-if-md="material:add" > Add products </f7-button>
-           </f7-list-item>
-         </f7-list>
-       </f7-col>
-        </f7-row>
-       <div >
-        <ul>
-          <li v-for="product in cart" v-bind:key="product.id">
-            {{ product.name }}
-          </li>
-        </ul>
-        <f7-row>
+           <f7-list-item >
+              <f7-row style="width :100%">
+          <f7-col>
+               <f7-row>
           <f7-col>
             <f7-button class="button button-fill" style="background-color:gray"  v-on:click="inc(product)">+</f7-button>
 
@@ -84,23 +81,40 @@
 
 
         </f7-row>
-        <f7-row>
-          <f7-col>
-
           </f7-col>
 
-        </f7-row>
-        <div v-if="cart.length">
-          Total: {{ total }}
-        </div>
+    </f7-row>
+  </f7-list-item>
+ <!-- <f7-list-item>
+    <f7-row>
+      <f7-col>
+        <f7-button  style="background-color:#504C47;color:white; width:100%" icon-if-md="material:shopping_cart" > Check Out 
+        </f7-button>
+      </f7-col>
+      <f7-col>
+        <f7-button  style="background-color:#504C47;color:white;width:100% " icon-if-md="material:add" > Continue Shopping 
+        </f7-button>
+      </f7-col>
+    </f7-row>
+  </f7-list-item>-->
+</f7-list>
+</f7-col>
+</f7-row>
+<div >
+  <ul>
+    <li v-for="product in cart" v-bind:key="product.id">
+    {{ product.name }} 
+    </li>
+  </ul>
+  <div v-if="cart.length">
+  <!-- Total: {{ total }}-->
+  </div>
         <!--<div v-else>
           no Items in cart
         </div>-->
-
-
-      </div>
-    </f7-row>
-  </f7-card-content>
+</div>
+</f7-row>
+</f7-card-content>
 </f7-card>
       <!--<f7-row  v-if="products.length" :key="products.product_id" >
           <f7-col style="height:100%">
@@ -115,7 +129,7 @@
                <f7-button class="button " style="background-color:#e40046;color:white"><a style="color:white" v-bind:href="'/cart/'+products.product_id" > Add To Cart</a> </f7-button>
           </f7-col> 
       </f7-row>-->
-      </f7-block >
+      </f7-block>
       <f7-block>
         <f7-row>
           <f7-col style="text-align:center"><h2> Select Size</h2></f7-col>
@@ -232,17 +246,15 @@ export default {
 
   }       
 },  
-created(){
- axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})
-
-            //, axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.similarproducts = response.data})
-          // window.addEventListener('scroll', this.handleScroll); // helps to handle scroll //
-          
-        },
-        methods: {
+created()
+{
+    axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProductDetials&product_id='+this.id).then(response => {this.products = response.data})    
+ },
+  methods: 
+  {
           getPostsViaREST (event) {
            axios.get('https://www.kashmirbox.com/index.php?route=feed/product/getProducts&path=442').then(response => {this.products = response.data})
-         },
+  },
          changecart(){
           if(this.isProduct){
            this.cartdes="Add To Cart"
@@ -276,12 +288,14 @@ created(){
      this.total +=1200;
 
      var found=false;
-     alert(this.total+product.name);
-   // router.push({ name: 'cart', params: {product.product_id}})
+     alert("Total Amt:"+" ₹ "+this.total+"\n Product Name:"+" "+product.name);
+    
+    this.$router.push({name:'cart',params:{pId:id}});
    for(var i=0; i<this.cart.length;i++){
     if(this.cart[i].product_id===product.product_id){
       this.cart[i].qty++;
       found=true;
+
     }
   }
   if(!found){
@@ -292,12 +306,8 @@ created(){
      qty:1,
    });
 
- }
-
-
-
-    //console.log(this.total);
-  }
+ }   //console.log(this.total);
+}
 
 } 
 }

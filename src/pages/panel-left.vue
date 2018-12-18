@@ -37,7 +37,7 @@
 	  	<f7-list-item accordion-item title="FOOD">
 		    <f7-accordion-content>
 		      <f7-list>
-		      	<f7-list-item link="/category/442#Dry Fruits"  title="Dry Fruits" view="#main-view">
+		      	<f7-list-item link="/category/442#Dry Fruits"  title="Dry Fruits" view="#main-view" panel-close>
 		        	</f7-list-item>
 		        <!--<f7-list-item accordion-item link="" title="HEALTHY FOODS">
 		        	 <f7-accordion-content> 
@@ -93,6 +93,7 @@
 	  	 <f7-list-item link="/form/" title="SignUp" view="#main-view" panel-close></f7-list-item>
 	  	 </f7-list-item>
 	  	 <f7-list-item link="/login/" title="Login" view="#main-view" panel-close></f7-list-item>
+	  	 <f7-list-item link="/about/" title="About Us" view="#main-view" panel-close></f7-list-item>
 	  	 
 	      
 	    </f7-list>
